@@ -11,13 +11,11 @@ class ReverseActorSpec extends Specification with Specs2RouteTest {
     "Reverse a string that it receives if it is not a Palindrome" in new AkkaTestkitContext() {
       import ReverseActor._
       //TODO subscribe the testActor to the ReverseActorReady event
-      system.eventStream.subscribe(testActor, classOf[ReverseInitialized])
 
       val reverseActor = system.actorOf(props, name)
       import akka.pattern.ask
 
       //TODO  expect the ReverseInitialized
-      expectMsg(ReverseInitialized(reverseActor))
 
       reverseActor ! Reverse("reverse this!")
 
@@ -31,12 +29,10 @@ class ReverseActorSpec extends Specification with Specs2RouteTest {
       import ReverseActor._
 
       //TODO subscribe the testActor to the ReverseActorReady event
-      system.eventStream.subscribe(testActor, classOf[ReverseInitialized])
 
       val reverseActor = system.actorOf(props, name)
 
       //TODO expect the ReverseInitialized
-      expectMsg(ReverseInitialized(reverseActor))
 
       reverseActor ! Reverse("akka")
 
