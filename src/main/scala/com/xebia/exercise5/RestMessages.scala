@@ -25,3 +25,9 @@ case class L33tResponse(value:String)
 object L33tResponse extends DefaultJsonProtocol {
   implicit val format = jsonFormat1(L33tResponse.apply)
 }
+
+case class PalindromeCountResponse(count:Int)
+
+object PalindromeCountResponse extends DefaultJsonProtocol {
+  implicit val format = jsonFormat1(PalindromeCountResponse.apply)
+}
