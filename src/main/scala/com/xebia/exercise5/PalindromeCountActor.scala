@@ -13,7 +13,7 @@ object PalindromeCountActor {
 }
 
 class PalindromeCountActor extends Actor {
-  //TODO subscribe this actor to PalindromeFound case class
+  context.system.eventStream.subscribe(self, classOf[PalindromeFound])
 
   var count = 0
   

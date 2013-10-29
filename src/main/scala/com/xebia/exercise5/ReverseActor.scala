@@ -23,9 +23,9 @@ object ReverseActor {
 
   case object NotInitialized extends Result
 
-  //TODO create a case class ReverseInitialized which contains the ActorRef of the ReverseActor
+  case class ReverseInitialized(actor: ActorRef)
 
-  //TODO create a case object PalindromeFound
+  case class PalindromeFound(value: String)
 }
 
 class ReverseActor extends Actor {
@@ -41,7 +41,7 @@ class ReverseActor extends Actor {
     case Init => ReverserFactory.loadReverser.onComplete {
       case Success(reverse) =>
         context.become(initialized(reverse))
-        // TODO publish the ReverseInitialized message containing the ActorRef of this actor
+        context.system.eventStream.publish(ReverseInitialized(self))
 
       case Failure(e)   => context.system.scheduler.scheduleOnce(1 seconds, self, Init)
     }
@@ -55,8 +55,8 @@ class ReverseActor extends Actor {
       reverse(value).map { reversed =>
         if(reversed == value) {
           theSender ! PalindromeResult
-          println("palindrome in reverse:"+self + " " + self.path)
-          // TODO publish the PalindromeFound message
+
+          context.system.eventStream.publish(PalindromeFound(value))
         }
         else theSender ! ReverseResult(reversed)
       }
