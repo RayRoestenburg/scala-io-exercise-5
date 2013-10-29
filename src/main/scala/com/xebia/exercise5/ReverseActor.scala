@@ -1,9 +1,12 @@
-package com.xebia.exercise5
+package com.xebia
+package exercise5
 
-import akka.actor.{ActorRef, Actor, Props}
-import com.xebia.exercise5.ReverserFactory.AsyncReverseFunction
 import scala.concurrent.duration._
 import scala.util.{Success, Failure}
+
+import akka.actor.{ActorRef, Actor, Props}
+
+import ReverserFactory.AsyncReverseFunction
 
 object ReverseActor {
   def props = Props[ReverseActor]
@@ -58,5 +61,4 @@ class ReverseActor extends Actor {
         else theSender ! ReverseResult(reversed)
       }
   }
-
 }

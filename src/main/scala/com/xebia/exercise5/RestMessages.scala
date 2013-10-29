@@ -1,4 +1,5 @@
-package com.xebia.exercise5
+package com.xebia
+package exercise5
 
 import spray.json.DefaultJsonProtocol
 

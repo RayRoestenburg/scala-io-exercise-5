@@ -1,4 +1,5 @@
-package com.xebia.exercise5
+package com.xebia
+package exercise5
 
 import scala.concurrent.ExecutionContext
 
@@ -19,7 +20,6 @@ trait Receptionist extends HttpServiceActor
   def receive = runRoute(reverseRoute ~ l33tRoute ~ palindromeCountRoute)
 
   implicit def executionContext = actorRefFactory.dispatcher
-
 }
 
 trait ReverseRoute extends HttpService

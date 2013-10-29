@@ -1,13 +1,18 @@
-package com.xebia.exercise5
+package com.xebia
+package exercise5
 
-
-import spray.testkit.Specs2RouteTest
-import com.xebia.exercise5.TestSupport.AkkaTestkitContext
-import org.specs2.mutable.Specification
-import akka.actor.ActorSystem
 import com.typesafe.config.ConfigFactory
 
-class L33tActorSpec extends Specification  with Specs2RouteTest {
+import akka.actor.ActorSystem
+
+import spray.testkit.Specs2RouteTest
+
+import org.specs2.mutable.Specification
+
+import TestSupport.AkkaTestkitContext
+
+class L33tActorSpec extends Specification
+                       with Specs2RouteTest {
 
   // This is configured for the test
   // with fallback to the application.conf

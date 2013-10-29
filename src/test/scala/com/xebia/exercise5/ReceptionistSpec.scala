@@ -1,15 +1,17 @@
 package com.xebia.exercise5
 
-import spray.testkit.Specs2RouteTest
-import org.specs2.mutable.Specification
+import scala.concurrent.ExecutionContext
+
+import akka.actor.{Actor, Props, ActorRef, ActorRefFactory}
 
 import spray.http.StatusCodes
 import spray.httpx.SprayJsonSupport._
+import spray.testkit.Specs2RouteTest
 
-import akka.actor.{Actor, Props, ActorRef, ActorRefFactory}
-import scala.concurrent.ExecutionContext
+import org.specs2.mutable.Specification
 
-class ReceptionistSpec extends Specification with Specs2RouteTest {
+class ReceptionistSpec extends Specification
+                          with Specs2RouteTest {
 
   trait TestCreationSupport extends CreationSupport {
     def createChild(props: Props, name: String): ActorRef = {

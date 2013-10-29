@@ -1,10 +1,12 @@
-package com.xebia.exercise5
+package com.xebia
+package exercise5
 
+import spray.testkit.Specs2RouteTest
 import org.specs2.mutable.Specification
 import TestSupport._
-import spray.testkit.Specs2RouteTest
 
-class ReverseActorSpec extends Specification with Specs2RouteTest {
+class ReverseActorSpec extends Specification
+                          with Specs2RouteTest {
   sequential
 
   "The ReverseActor" should {

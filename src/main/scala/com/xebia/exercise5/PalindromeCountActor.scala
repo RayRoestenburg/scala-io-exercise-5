@@ -1,8 +1,9 @@
-package com.xebia.exercise5
+package com.xebia
+package exercise5
 
 import akka.actor.{Props, Actor}
-import com.xebia.exercise5.PalindromeCountActor.{NrOfPalindromes, CountPalindromes}
-import com.xebia.exercise5.ReverseActor.PalindromeFound
+import PalindromeCountActor.{NrOfPalindromes, CountPalindromes}
+import ReverseActor.PalindromeFound
 
 object PalindromeCountActor {
   def props = Props[PalindromeCountActor]
