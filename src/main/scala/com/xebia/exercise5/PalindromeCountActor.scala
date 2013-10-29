@@ -8,6 +8,7 @@ import ReverseActor.PalindromeFound
 object PalindromeCountActor {
   def props = Props[PalindromeCountActor]
   def name = "palindrome-counter"
+
   case object CountPalindromes
   case class NrOfPalindromes(count:Int)
 }

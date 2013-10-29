@@ -25,7 +25,7 @@ object ReverseActor {
 
   //TODO create a case class ReverseInitialized which contains the ActorRef of the ReverseActor
 
-  //TODO create a case object PalindromeFound
+  //TODO create a case class PalindromeFound which contains the value
 }
 
 class ReverseActor extends Actor {
