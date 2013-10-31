@@ -11,7 +11,7 @@ import spray.http.StatusCodes
 
 import scala.util.{Failure, Success}
 
-trait Receptionist extends HttpServiceActor
+class Receptionist extends HttpServiceActor
                       with ReverseRoute
                       with L33tRoute
                       with PalindromeCountRoute
