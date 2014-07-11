@@ -21,7 +21,7 @@ class Settings(config: Config, extendedSystem: ExtendedActorSystem) extends Exte
     val useShift = config.getBoolean("scala-io-exercise.l33t.use-shift")
   }
 
-  val askTimeout = FiniteDuration(config.getMilliseconds("scala-io-exercise.ask-timeout"), TimeUnit.MILLISECONDS)
+  val askTimeout = config.getDuration("scala-io-exercise.ask-timeout", TimeUnit.MILLISECONDS)
 
 }
 
