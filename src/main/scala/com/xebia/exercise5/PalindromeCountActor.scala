@@ -6,7 +6,7 @@ import PalindromeCountActor.{NrOfPalindromes, CountPalindromes}
 import ReverseActor.PalindromeFound
 
 object PalindromeCountActor {
-  def props = Props[PalindromeCountActor]
+  def props = Props(new PalindromeCountActor)
   def name = "palindrome-counter"
   case object CountPalindromes
   case class NrOfPalindromes(count:Int)
@@ -16,7 +16,7 @@ class PalindromeCountActor extends Actor {
   context.system.eventStream.subscribe(self, classOf[PalindromeFound])
 
   var count = 0
-  
+
   def receive = {
 
     case PalindromeFound(value) =>

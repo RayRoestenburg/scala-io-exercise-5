@@ -9,7 +9,7 @@ import akka.actor.{ActorRef, Actor, Props}
 import ReverserFactory.AsyncReverseFunction
 
 object ReverseActor {
-  def props = Props[ReverseActor]
+  def props = Props(new ReverseActor)
   def name = "reverser"
 
   sealed trait Result
