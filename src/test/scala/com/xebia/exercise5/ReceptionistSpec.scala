@@ -16,7 +16,7 @@ class ReceptionistSpec extends Specification
   trait TestCreationSupport extends CreationSupport {
     def createChild(props: Props, name: String): ActorRef = {
       if(name == ReverseActor.name) {
-        system.actorOf(Props[FakeReverseActor], name)
+        system.actorOf(Props(new FakeReverseActor), name)
       } else system.actorOf(props, name)
     }
 

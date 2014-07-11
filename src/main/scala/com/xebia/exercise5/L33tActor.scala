@@ -6,7 +6,7 @@ import akka.actor.{Props, Actor}
 object L33tActor {
   case class L33tify(value:String)
   case class L33tResult(value:String)
-  def props = Props[L33tActor]
+  def props = Props(new L33tActor)
   def name = "l33t"
 }
 
