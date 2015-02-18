@@ -1,7 +1,7 @@
 Exercise 5
 ==========
 
-In this exercise we continue with the end result of [exercise 4](http://github/RayRoestenburg/scala-io-exercise-4). 
+In this exercise we continue with the end result of [exercise 4](http://github.com/RayRoestenburg/scala-io-exercise-4). 
 In this exercise we will use the **EventStream** to publish events and subscribe to them.
 A new actor is added, the **PalindromeCountActor**, which can keep track of the number of palindromes that have been found. There was a problem in the test for ReverseActor that we needed to sleep, which we can solve with events as well. The ReverseActor should publish a **ReverseInitialized** event when it is initialized. The test can subscribe the testActor to listen for the ReverseInitialized event and expect this message in the test before actually testing reverse. 
 
